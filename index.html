@@ -439,7 +439,7 @@
 </div>
 
 <div class="wrap shipping-strip">
-  <a href="#top">back to top</a>
+  <a href="#top" id="back-to-top">back to top</a>
 </div>
 
 
@@ -476,6 +476,11 @@
   burger.addEventListener('click', function(){
     var open = panel.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.getElementById('back-to-top').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // floating newsletter: show once per session, dismissible
