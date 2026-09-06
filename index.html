@@ -125,12 +125,12 @@
     color:var(--ink);
   }
   .hero h1{
-    font-size:clamp(28px,4vw,44px);
+    font-size:clamp(20px,3vw,30px);
     line-height:1.1;
-    letter-spacing:0.01em;
+    letter-spacing:0.55em;
     margin:0 0 20px;
     text-transform:lowercase;
-    font-weight:400;
+    font-weight:300;
   }
   .hero-row{ display:flex; }
   .btn{
@@ -235,7 +235,7 @@
 
   .grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:0;
     margin-bottom:0;
   }
@@ -294,10 +294,6 @@
     letter-spacing:0.04em;
   }
 
-  @media (max-width:900px){
-    .grid{ grid-template-columns:repeat(2,1fr); }
-  }
-
   @media (max-width:720px){
     .nav{ grid-template-columns:auto 1fr auto; }
     .nav-links{ display:none; }
@@ -316,7 +312,7 @@
     }
     .mobile-panel a{ text-decoration:none; }
     .hero{ min-height:auto; padding:56px 0; }
-    .grid{ grid-template-columns:1fr 1fr; }
+    .grid{ grid-template-columns:1fr; }
     .float-newsletter{ width:calc(100% - 40px); right:20px; left:20px; }
   }
 </style>
@@ -361,37 +357,37 @@
 
     <div class="tile">
       <a class="tile-frame" href="shop.html">
-        <img src="piece-one.jpg" alt="piece one">
+        <img src="piece-one.jpg" alt="01">
       </a>
       <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">Piece One</a></span>
+        <span class="tile-name"><a href="shop.html">01</a></span>
       </div>
     </div>
 
     <div class="tile">
       <a class="tile-frame" href="shop.html">
-        <img src="piece-two.jpg" alt="piece two">
+        <img src="piece-two.jpg" alt="02">
       </a>
       <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">Piece Two</a></span>
+        <span class="tile-name"><a href="shop.html">02</a></span>
       </div>
     </div>
 
     <div class="tile">
       <a class="tile-frame" href="shop.html">
-        <img src="piece-three.jpg" alt="piece three">
+        <img src="piece-three.jpg" alt="03">
       </a>
       <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">Piece Three</a></span>
+        <span class="tile-name"><a href="shop.html">03</a></span>
       </div>
     </div>
 
     <div class="tile">
       <a class="tile-frame" href="shop.html">
-        <img src="piece-four.jpg" alt="piece four">
+        <img src="piece-four.jpg" alt="04">
       </a>
       <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">Piece Four</a></span>
+        <span class="tile-name"><a href="shop.html">04</a></span>
       </div>
     </div>
 
