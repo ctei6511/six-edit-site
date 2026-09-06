@@ -234,41 +234,39 @@
 
 
   #the-edit{ padding-left:12px; padding-right:12px; }
-  .grid{
+  .feature-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(2,1fr);
     gap:20px;
     margin-bottom:0;
   }
-  .tile{
-    background:var(--paper);
-    padding:0;
-    display:flex;
-    flex-direction:column;
-  }
-  .tile-frame{
-    aspect-ratio:3/4;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  .feature-large{
+    grid-column:1 / 3;
+    grid-row:1 / 3;
+    display:block;
     overflow:hidden;
     background:var(--paper);
   }
-  .tile-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .tile-frame svg{ width:60%; height:60%; }
-  .tile-info{
-    padding:14px 16px 40px;
-    display:flex;
-    flex-direction:column;
-    gap:2px;
+  .feature-large img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .feature-small{
+    position:relative;
+    display:block;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:var(--paper);
   }
-  .tile-name{
-    font-size:12px;
-    font-weight:400;
-    letter-spacing:0.01em;
+  .feature-small img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .feature-small-label{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:var(--paper);
+    background:rgba(17,17,17,0.7);
+    padding:3px 7px;
   }
-  .tile-name a{ text-decoration:none; }
-  .tile-name a:hover, .tile-name a:focus-visible{ text-decoration:underline; }
 
 
 
@@ -313,7 +311,8 @@
     }
     .mobile-panel a{ text-decoration:none; }
     .hero{ min-height:auto; padding:56px 0; }
-    .grid{ grid-template-columns:1fr; }
+    .feature-grid{ grid-template-columns:repeat(2,1fr); grid-template-rows:auto; }
+    .feature-large{ grid-column:1 / 3; grid-row:auto; aspect-ratio:3/4; }
     .float-newsletter{ width:calc(100% - 40px); right:20px; left:20px; }
   }
 </style>
@@ -352,43 +351,31 @@
 </section>
 
 <div class="wrap" id="the-edit">
-  <div class="grid">
+  <div class="feature-grid">
 
-    <div class="tile">
-      <a class="tile-frame" href="shop.html">
-        <img src="piece-one.jpg" alt="01">
-      </a>
-      <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">01</a></span>
-      </div>
-    </div>
+    <a class="feature-large" href="shop.html">
+      <img src="feature.jpg" alt="six edit">
+    </a>
 
-    <div class="tile">
-      <a class="tile-frame" href="shop.html">
-        <img src="piece-two.jpg" alt="02">
-      </a>
-      <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">02</a></span>
-      </div>
-    </div>
+    <a class="feature-small" href="shop.html">
+      <img src="piece-one.jpg" alt="01">
+      <span class="feature-small-label">01</span>
+    </a>
 
-    <div class="tile">
-      <a class="tile-frame" href="shop.html">
-        <img src="piece-three.jpg" alt="03">
-      </a>
-      <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">03</a></span>
-      </div>
-    </div>
+    <a class="feature-small" href="shop.html">
+      <img src="piece-two.jpg" alt="02">
+      <span class="feature-small-label">02</span>
+    </a>
 
-    <div class="tile">
-      <a class="tile-frame" href="shop.html">
-        <img src="piece-four.jpg" alt="04">
-      </a>
-      <div class="tile-info">
-        <span class="tile-name"><a href="shop.html">04</a></span>
-      </div>
-    </div>
+    <a class="feature-small" href="shop.html">
+      <img src="piece-three.jpg" alt="03">
+      <span class="feature-small-label">03</span>
+    </a>
+
+    <a class="feature-small" href="shop.html">
+      <img src="piece-four.jpg" alt="04">
+      <span class="feature-small-label">04</span>
+    </a>
 
   </div>
 </div>
