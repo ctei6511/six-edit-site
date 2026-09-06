@@ -250,22 +250,23 @@
   .feature-large-overlay{ display:none; }
   .feature-small-grid{ display:contents; }
   .feature-small{
-    position:relative;
-    display:block;
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+  }
+  .feature-small-photo{
     aspect-ratio:3/4;
     overflow:hidden;
     background:var(--paper);
   }
-  .feature-small img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .feature-small-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
   .feature-small-label{
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    font-size:11px;
-    letter-spacing:0.04em;
-    color:var(--paper);
-    background:rgba(17,17,17,0.7);
-    padding:3px 7px;
+    margin-top:8px;
+    font-size:9px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--ink);
   }
 
 
@@ -421,23 +422,31 @@
     <div class="feature-small-grid">
 
       <a class="feature-small" href="shop.html">
-        <img src="piece-one.jpg" alt="01" loading="lazy" decoding="async">
-        <span class="feature-small-label">01</span>
+        <span class="feature-small-photo">
+          <img src="piece-one.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
+        </span>
+        <span class="feature-small-label">off shoulder tie top</span>
       </a>
 
       <a class="feature-small" href="shop.html">
-        <img src="piece-two.jpg" alt="02" loading="lazy" decoding="async">
-        <span class="feature-small-label">02</span>
+        <span class="feature-small-photo">
+          <img src="piece-two.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
+        </span>
+        <span class="feature-small-label">low waist midi skirt</span>
       </a>
 
       <a class="feature-small" href="shop.html">
-        <img src="piece-three.jpg" alt="03" loading="lazy" decoding="async">
-        <span class="feature-small-label">03</span>
+        <span class="feature-small-photo">
+          <img src="piece-three.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
+        </span>
+        <span class="feature-small-label">low waist midi skirt</span>
       </a>
 
       <a class="feature-small" href="shop.html">
-        <img src="piece-four.jpg" alt="04" loading="lazy" decoding="async">
-        <span class="feature-small-label">04</span>
+        <span class="feature-small-photo">
+          <img src="piece-four.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
+        </span>
+        <span class="feature-small-label">off shoulder tie top</span>
       </a>
 
     </div>
