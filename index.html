@@ -238,11 +238,14 @@
   .feature-large{
     grid-column:1 / 3;
     grid-row:1 / 3;
-    display:block;
+    position:relative;
     overflow:hidden;
     background:var(--paper);
   }
-  .feature-large img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .feature-large-link{ display:block; width:100%; height:100%; }
+  .feature-large-link img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .feature-large-overlay{ display:none; }
+  .feature-small-grid{ display:contents; }
   .feature-small{
     position:relative;
     display:block;
@@ -292,7 +295,53 @@
     .hero{ order:2; }
     #the-edit{ order:1; }
     .wrap{ padding:0 20px; }
-    #the-edit{ padding:28px 16px; }
+    #the-edit{ padding:0; }
+    .feature-grid{ display:block; }
+    .feature-large{
+      display:block;
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      height:100vh;
+      height:100svh;
+      aspect-ratio:auto;
+    }
+    .feature-large-overlay{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:20px;
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:32px 20px 40px;
+      background:linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+      z-index:2;
+    }
+    .feature-large-overlay h1{
+      font-size:clamp(20px,3vw,30px);
+      line-height:1.1;
+      letter-spacing:0.35em;
+      margin:0;
+      text-transform:lowercase;
+      font-weight:300;
+      color:var(--paper);
+    }
+    .feature-large-overlay .btn{
+      color:var(--paper);
+      border-color:var(--paper);
+    }
+    .feature-large-overlay .btn:hover,
+    .feature-large-overlay .btn:focus-visible{
+      background:var(--paper);
+      color:var(--ink);
+    }
+    .hero-inner{ display:none; }
+    .hero{ min-height:50vh; padding:0; }
+    .feature-small-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      padding:16px;
+    }
     .nav-links{ display:none; }
     .nav-burger{ display:block; padding:10px 0; }
     .nav-cta a{ padding:11px 16px; }
@@ -308,10 +357,6 @@
       font-weight:400;
     }
     .mobile-panel a{ display:block; padding:6px 0; text-decoration:none; }
-    .hero{ min-height:auto; padding:56px 0; }
-    .hero h1{ letter-spacing:0.35em; }
-    .feature-grid{ grid-template-columns:repeat(2,1fr); grid-template-rows:auto; gap:12px; }
-    .feature-large{ grid-column:1 / 3; grid-row:auto; aspect-ratio:3/4; }
     .float-newsletter{ width:calc(100% - 40px); right:20px; left:20px; }
     .float-newsletter input{ font-size:16px; }
   }
@@ -355,30 +400,39 @@
 <div class="wrap" id="the-edit">
   <div class="feature-grid">
 
-    <a class="feature-large" href="shop.html">
-      <img src="feature.jpg" alt="six edit" loading="lazy" decoding="async">
-    </a>
+    <div class="feature-large">
+      <a class="feature-large-link" href="shop.html">
+        <img src="feature.jpg" alt="six edit" loading="lazy" decoding="async">
+      </a>
+      <div class="feature-large-overlay">
+        <h1>six edit</h1>
+        <a class="btn" href="shop.html">shop</a>
+      </div>
+    </div>
 
-    <a class="feature-small" href="shop.html">
-      <img src="piece-one.jpg" alt="01" loading="lazy" decoding="async">
-      <span class="feature-small-label">01</span>
-    </a>
+    <div class="feature-small-grid">
 
-    <a class="feature-small" href="shop.html">
-      <img src="piece-two.jpg" alt="02" loading="lazy" decoding="async">
-      <span class="feature-small-label">02</span>
-    </a>
+      <a class="feature-small" href="shop.html">
+        <img src="piece-one.jpg" alt="01" loading="lazy" decoding="async">
+        <span class="feature-small-label">01</span>
+      </a>
 
-    <a class="feature-small" href="shop.html">
-      <img src="piece-three.jpg" alt="03" loading="lazy" decoding="async">
-      <span class="feature-small-label">03</span>
-    </a>
+      <a class="feature-small" href="shop.html">
+        <img src="piece-two.jpg" alt="02" loading="lazy" decoding="async">
+        <span class="feature-small-label">02</span>
+      </a>
 
-    <a class="feature-small" href="shop.html">
-      <img src="piece-four.jpg" alt="04" loading="lazy" decoding="async">
-      <span class="feature-small-label">04</span>
-    </a>
+      <a class="feature-small" href="shop.html">
+        <img src="piece-three.jpg" alt="03" loading="lazy" decoding="async">
+        <span class="feature-small-label">03</span>
+      </a>
 
+      <a class="feature-small" href="shop.html">
+        <img src="piece-four.jpg" alt="04" loading="lazy" decoding="async">
+        <span class="feature-small-label">04</span>
+      </a>
+
+    </div>
   </div>
 </div>
 
