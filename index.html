@@ -85,6 +85,8 @@
   }
   .mobile-panel{ display:none; }
 
+  .reorder-mobile{ display:contents; }
+
   .hero{
     position:relative;
     min-height:88vh;
@@ -286,6 +288,9 @@
   }
 
   @media (max-width:720px){
+    .reorder-mobile{ display:flex; flex-direction:column; }
+    .hero{ order:2; }
+    #the-edit{ order:1; }
     .wrap{ padding:0 20px; }
     #the-edit{ padding:28px 16px; }
     .nav-links{ display:none; }
@@ -333,6 +338,8 @@
   </div>
 </header>
 
+<div class="reorder-mobile">
+
 <!-- to add your banner photo: change the line below to
      <section class="hero has-photo" style="background-image:url('hero-banner.jpg')">
      the has-photo class adds a subtle dark overlay so the white text stays readable -->
@@ -373,6 +380,8 @@
     </a>
 
   </div>
+</div>
+
 </div>
 
 <div class="wrap shipping-strip">
