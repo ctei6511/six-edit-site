@@ -142,19 +142,6 @@
   }
   .btn:hover, .btn:focus-visible{ background:var(--ink); color:var(--paper); }
 
-  .shipping-strip{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    padding:14px 0;
-  }
-  .shipping-strip a{
-    font-size:13px;
-    letter-spacing:0.02em;
-    text-decoration:none;
-    color:var(--ink);
-  }
-
   .float-newsletter{
     position:fixed;
     right:20px;
@@ -364,7 +351,7 @@
 </head>
 <body>
 
-<header id="top">
+<header>
   <div class="wrap">
     <nav class="nav">
       <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mobile-panel">menu</button>
@@ -438,9 +425,6 @@
 
 </div>
 
-<div class="wrap shipping-strip">
-  <a href="#top" id="back-to-top">back to top</a>
-</div>
 
 
 
@@ -476,11 +460,6 @@
   burger.addEventListener('click', function(){
     var open = panel.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  document.getElementById('back-to-top').addEventListener('click', function(e){
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // floating newsletter: show once per session, dismissible
