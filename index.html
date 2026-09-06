@@ -268,6 +268,35 @@
     font-weight:600;
     color:var(--ink);
   }
+  .feature-small-meta{
+    display:block;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .25s ease, opacity .2s ease, margin-top .25s ease;
+  }
+  .feature-small:hover .feature-small-meta,
+  .feature-small:focus-visible .feature-small-meta,
+  .feature-small:active .feature-small-meta{
+    max-height:50px;
+    opacity:1;
+    margin-top:8px;
+  }
+  .feature-small-price{
+    display:block;
+    font-size:9px;
+    letter-spacing:0.02em;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .feature-small-sizes{
+    display:flex;
+    gap:10px;
+    font-size:9px;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
 
 
 
@@ -426,6 +455,12 @@
           <img src="piece-one.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
         </span>
         <span class="feature-small-label">off shoulder tie top</span>
+        <span class="feature-small-meta">
+          <span class="feature-small-price">$139.99</span>
+          <span class="feature-small-sizes">
+            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+          </span>
+        </span>
       </a>
 
       <a class="feature-small" href="https://theblackandwhite.store/products/low-waist-midi-skirt">
@@ -433,6 +468,12 @@
           <img src="piece-two.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
         </span>
         <span class="feature-small-label">low waist midi skirt</span>
+        <span class="feature-small-meta">
+          <span class="feature-small-price">$158.99</span>
+          <span class="feature-small-sizes">
+            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+          </span>
+        </span>
       </a>
 
       <a class="feature-small" href="https://theblackandwhite.store/products/low-waist">
@@ -440,6 +481,12 @@
           <img src="piece-three.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
         </span>
         <span class="feature-small-label">low waist midi skirt</span>
+        <span class="feature-small-meta">
+          <span class="feature-small-price">$158.99</span>
+          <span class="feature-small-sizes">
+            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+          </span>
+        </span>
       </a>
 
       <a class="feature-small" href="https://theblackandwhite.store/products/off-shoulder-tie-top-3">
@@ -447,6 +494,12 @@
           <img src="piece-four.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
         </span>
         <span class="feature-small-label">off shoulder tie top</span>
+        <span class="feature-small-meta">
+          <span class="feature-small-price">$139.99</span>
+          <span class="feature-small-sizes">
+            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+          </span>
+        </span>
       </a>
 
     </div>
