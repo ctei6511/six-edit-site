@@ -277,7 +277,8 @@
   }
   .feature-small:hover .feature-small-meta,
   .feature-small:focus-visible .feature-small-meta,
-  .feature-small:active .feature-small-meta{
+  .feature-small:active .feature-small-meta,
+  .feature-small.show-meta .feature-small-meta{
     max-height:50px;
     opacity:1;
     margin-top:8px;
@@ -296,6 +297,9 @@
     letter-spacing:0.02em;
     text-transform:uppercase;
     color:var(--muted);
+  }
+  .feature-small-view{
+    display:none;
   }
 
 
@@ -374,6 +378,16 @@
       grid-template-columns:repeat(2,1fr);
       gap:12px;
       padding:16px;
+    }
+    .feature-small-view{
+      display:inline-block;
+      margin-top:10px;
+      font-size:9px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      color:var(--ink);
+      border-bottom:1px solid var(--ink);
+      padding-bottom:1px;
     }
     .nav-links{ display:none; }
     .nav-burger{ display:block; padding:10px 0; }
@@ -460,6 +474,7 @@
           <span class="feature-small-sizes">
             <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
           </span>
+        <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -473,6 +488,7 @@
           <span class="feature-small-sizes">
             <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
           </span>
+        <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -486,6 +502,7 @@
           <span class="feature-small-sizes">
             <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
           </span>
+        <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -499,6 +516,7 @@
           <span class="feature-small-sizes">
             <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
           </span>
+        <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -555,6 +573,26 @@
     floatBox.classList.remove('show');
     sessionStorage.setItem('sixEditNewsletterDismissed', '1');
   });
+
+  // touch devices: first tap on a product tile reveals price/sizes, tapping 'view' navigates
+  if (window.matchMedia('(hover: none)').matches) {
+    var tiles = document.querySelectorAll('.feature-small');
+    tiles.forEach(function(tile){
+      tile.addEventListener('click', function(e){
+        if (e.target.closest('.feature-small-view')) return;
+        if (!tile.classList.contains('show-meta')) {
+          e.preventDefault();
+          tiles.forEach(function(t){ t.classList.remove('show-meta'); });
+          tile.classList.add('show-meta');
+        }
+      });
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.feature-small')) {
+        tiles.forEach(function(t){ t.classList.remove('show-meta'); });
+      }
+    });
+  }
 
   // ---- klaviyo signup ----
   // replace these two values with your own, see the walkthrough
