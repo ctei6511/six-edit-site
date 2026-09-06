@@ -260,8 +260,15 @@
     background:var(--paper);
   }
   .feature-small-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .feature-small-label{
+  .feature-small-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
     margin-top:8px;
+    gap:12px;
+  }
+  .feature-small-text{ min-width:0; }
+  .feature-small-label{
     font-size:9px;
     letter-spacing:0.03em;
     text-transform:uppercase;
@@ -300,6 +307,7 @@
   }
   .feature-small-view{
     display:none;
+    flex-shrink:0;
   }
 
 
@@ -380,14 +388,18 @@
       padding:16px;
     }
     .feature-small-view{
-      display:inline-block;
-      margin-top:10px;
       font-size:9px;
       letter-spacing:0.06em;
       text-transform:uppercase;
       color:var(--ink);
       border-bottom:1px solid var(--ink);
       padding-bottom:1px;
+    }
+    .feature-small:hover .feature-small-view,
+    .feature-small:focus-visible .feature-small-view,
+    .feature-small:active .feature-small-view,
+    .feature-small.show-meta .feature-small-view{
+      display:inline-block;
     }
     .nav-links{ display:none; }
     .nav-burger{ display:block; padding:10px 0; }
@@ -468,13 +480,17 @@
         <span class="feature-small-photo">
           <img src="piece-one.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
         </span>
-        <span class="feature-small-label">off shoulder tie top</span>
-        <span class="feature-small-meta">
-          <span class="feature-small-price">$139.99</span>
-          <span class="feature-small-sizes">
-            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+        <span class="feature-small-row">
+          <span class="feature-small-text">
+            <span class="feature-small-label">off shoulder tie top</span>
+            <span class="feature-small-meta">
+              <span class="feature-small-price">$139.99</span>
+              <span class="feature-small-sizes">
+                <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+              </span>
+            </span>
           </span>
-        <span class="feature-small-view">view</span>
+          <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -482,13 +498,17 @@
         <span class="feature-small-photo">
           <img src="piece-two.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
         </span>
-        <span class="feature-small-label">low waist midi skirt</span>
-        <span class="feature-small-meta">
-          <span class="feature-small-price">$158.99</span>
-          <span class="feature-small-sizes">
-            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+        <span class="feature-small-row">
+          <span class="feature-small-text">
+            <span class="feature-small-label">low waist midi skirt</span>
+            <span class="feature-small-meta">
+              <span class="feature-small-price">$158.99</span>
+              <span class="feature-small-sizes">
+                <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+              </span>
+            </span>
           </span>
-        <span class="feature-small-view">view</span>
+          <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -496,13 +516,17 @@
         <span class="feature-small-photo">
           <img src="piece-three.jpg" alt="low waist midi skirt" loading="lazy" decoding="async">
         </span>
-        <span class="feature-small-label">low waist midi skirt</span>
-        <span class="feature-small-meta">
-          <span class="feature-small-price">$158.99</span>
-          <span class="feature-small-sizes">
-            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+        <span class="feature-small-row">
+          <span class="feature-small-text">
+            <span class="feature-small-label">low waist midi skirt</span>
+            <span class="feature-small-meta">
+              <span class="feature-small-price">$158.99</span>
+              <span class="feature-small-sizes">
+                <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+              </span>
+            </span>
           </span>
-        <span class="feature-small-view">view</span>
+          <span class="feature-small-view">view</span>
         </span>
       </a>
 
@@ -510,13 +534,17 @@
         <span class="feature-small-photo">
           <img src="piece-four.jpg" alt="off shoulder tie top" loading="lazy" decoding="async">
         </span>
-        <span class="feature-small-label">off shoulder tie top</span>
-        <span class="feature-small-meta">
-          <span class="feature-small-price">$139.99</span>
-          <span class="feature-small-sizes">
-            <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+        <span class="feature-small-row">
+          <span class="feature-small-text">
+            <span class="feature-small-label">off shoulder tie top</span>
+            <span class="feature-small-meta">
+              <span class="feature-small-price">$139.99</span>
+              <span class="feature-small-sizes">
+                <span>xxs</span><span>xs</span><span>s</span><span>m</span><span>l</span>
+              </span>
+            </span>
           </span>
-        <span class="feature-small-view">view</span>
+          <span class="feature-small-view">view</span>
         </span>
       </a>
 
