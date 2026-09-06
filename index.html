@@ -36,11 +36,27 @@
     border-bottom:1px solid var(--line);
   }
   .nav{
-    display:flex;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
     align-items:center;
-    justify-content:space-between;
     padding:20px 0;
     gap:16px;
+  }
+  .nav-left{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    justify-self:start;
+  }
+  .nav-logo{
+    justify-self:center;
+    display:block;
+    line-height:0;
+  }
+  .nav-logo img{
+    height:22px;
+    width:auto;
+    display:block;
   }
   .nav-links{
     display:flex;
@@ -354,11 +370,16 @@
 <header>
   <div class="wrap">
     <nav class="nav">
-      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mobile-panel">menu</button>
-      <div class="nav-links">
-        <a href="https://theblackandwhite.store/collections/six-edit">the edit</a>
-        <a href="shop.html">shop now</a>
+      <div class="nav-left">
+        <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mobile-panel">menu</button>
+        <div class="nav-links">
+          <a href="https://theblackandwhite.store/collections/six-edit">the edit</a>
+          <a href="shop.html">shop now</a>
+        </div>
       </div>
+      <a class="nav-logo" href="index.html">
+        <img src="logo.png" alt="six edit">
+      </a>
       <div class="nav-cta">
         <a href="shop.html">shop six edit</a>
       </div>
